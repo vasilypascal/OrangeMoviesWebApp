@@ -1,0 +1,80 @@
+﻿@model List<OrangeMoviesApp.Domain.Core.MovieDto>
+@{
+    ViewData["Title"] = "Home Page";
+}
+@*TO DO: change to MovieViewModel*@
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Orange Movies portal!</h1>
+    <p class="display-6">Here you can research the best movies of all time.</p>
+    <p></p>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="100" aria-valuemax="100" style="width: 100%;"></div>
+    </div>
+    <p></p>
+</div>
+
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-light">Sort by</button>
+    <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" asp-controller="Home" asp-action="Index">Most Popular</a>
+            <a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-sortByRating="True">Top Rated</a>
+        </div>
+    </div>
+</div>
+<p></p>
+
+<div class=" parent">
+    @foreach (var @movie in Model)
+    {
+        <div class="list-group-item child card mb-3 align-content-center align-items-center text-center justify-content-center">
+            <h3 class="card-header align-items-md-center">@movie.Title</h3>
+            <div class="card-body">
+                <h5 class="card-title">Genres:</h5>
+                <h5 class="card-title">
+                    @foreach (var genre in @movie.Genres)
+                    {
+                        <a class="badge btn btn-lg bg-light" asp-controller="Home" asp-action="Index" asp-route-groupByGenreId="@genre.Id">@genre.Name</a>
+                    }
+                </h5>
+                <h5 class="card-title">User rating: <span class="badge bg-dark">@movie.VoteAverage</span></h5>
+                <h6 class="card-subtitle text-muted">Release date: <span class="badge bg-success">@movie.ReleaseDate</span></h6>
+            </div>
+            <div class="fill">
+                <img class="rounded-5" src="@movie.PosterPath" alt="@movie.Title">
+            </div>
+            <div class="card-body">
+                <p class="card-text"><a class="btn btn-lg btn-success" role="button" type="button" asp-controller="Home" asp-action="Create" asp-route-id="@movie.Id">Add movie to favourites</a></p>
+                <p class="card-text"><a class="btn btn-lg btn-info" role="button" type="button" asp-controller="Home" asp-action="MovieDetails" asp-route-id="@movie.Id">Movie details</a></p>
+            </div>
+        </div>
+        
+    }
+</div>
+<div>
+    <ul class="pagination pagination-lg align-content-center justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#">&laquo;</a>
+        </li>
+        <li class="page-item active">
+            <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pageId="1">1</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pageId="2">2</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pageId="3">3</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pageId="4">4</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pageId="5">5</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">&raquo;</a>
+        </li>
+    </ul>
+</div>

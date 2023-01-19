@@ -1,0 +1,35 @@
+﻿@model OrangeMoviesApp.Domain.Core.MovieDto
+@{
+    ViewData["Title"] = "Movie Details";
+}
+
+<div class="text-center">
+    <h3 class="display-6">Movie details:</h3>
+</div>
+
+<div class=" parent">
+    <div class="list-group-item child card mb-3 align-content-center align-items-center text-center justify-content-center" style="width: 50%;">
+        <h3 class="card-header">@Model.Title</h3>
+        <div class="card-body">
+            <h5 class="card-title">
+                Genres:
+            </h5>
+            <h5 class="card-title">
+                @foreach (var genre in Model.Genres)
+                {
+                    <span class="badge bg-light">@genre.Name</span>
+                }
+            </h5>
+            <h5 class="card-title">User rating: <span class="badge bg-dark">@Model.VoteAverage</span></h5>
+            <h6 class="card-subtitle text-muted">Release date: <span class="badge bg-success">@Model.ReleaseDate</span></h6>
+            </div>
+        <div class="fill">
+            <img class="rounded-5" src="@Model.PosterPath" alt="@Model.Title">
+        </div>
+        <div class="card-body">
+            <p class="card-text">Movie description:</p>
+            <p class="card-text">@Model.Overview</p>
+            <p class="card-text"><a class="btn btn-lg btn-success" role="button" type="button" asp-controller="Home" asp-action="Create" asp-route-id="@Model.Id">Add movie to favourites</a></p>
+        </div>
+    </div>
+</div>

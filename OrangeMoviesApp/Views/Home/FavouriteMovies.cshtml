@@ -1,0 +1,41 @@
+﻿@model List<OrangeMoviesApp.Domain.Core.Movie>
+@{
+    ViewData["Title"] = "Favourite Movies";
+}
+
+<p></p>
+<div class="text-center">
+    <h4 class="display-6">Your favourite movies:</h4>
+</div>
+<p></p>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="100" aria-valuemax="100" style="width: 100%;"></div>
+</div>
+<p></p>
+
+<div class=" parent">
+    @foreach (var @movie in Model)
+    {
+        <div class="list-group-item child card mb-3 align-content-center align-items-center text-center justify-content-center">
+            <h3 class="card-header align-items-md-center">@movie.Title</h3>
+            <div class="card-body">
+                <h5 class="card-title">Genres:</h5>
+                <h5 class="card-title">
+                    @foreach (var movieGenre in @movie.MovieGenres)
+                    {
+                        <span class="badge bg-light">@movieGenre.Genre.Name</span>
+                    }
+                </h5>
+                <h5 class="card-title">User rating: <span class="badge bg-dark">@movie.VoteAverage</span></h5>
+                <h6 class="card-subtitle text-muted">Release date: <span class="badge bg-success">@movie.ReleaseDate</span></h6>
+            </div>
+            <div class="fill">
+                <img class="rounded-5" src="@movie.PosterPath" alt="@movie.Title">
+            </div>
+            <div class="card-body">
+                <p class="card-text"><a class="btn btn-lg btn-danger" role="button" type="button" asp-controller="Home" asp-action="Delete" asp-route-id="@movie.MovieId">Remove movie from favourites</a></p>
+                <p class="card-text"><a class="btn btn-lg btn-info" role="button" type="button" asp-controller="Home" asp-action="MovieDetails" asp-route-id="@movie.MovieId">Movie details</a></p>
+            </div>
+        </div>
+    }
+</div>

@@ -10,7 +10,6 @@ C:\OrangeMoviesApp\OrangeMoviesApp.Domain\obj\Debug\netcoreapp3.1\OrangeMoviesAp
 C:\TestMoviesApp_GitClone\OrangeMoviesWebApp\OrangeMoviesApp.Domain\bin\Debug\netcoreapp3.1\OrangeMoviesApp.Domain.deps.json
 C:\TestMoviesApp_GitClone\OrangeMoviesWebApp\OrangeMoviesApp.Domain\bin\Debug\netcoreapp3.1\OrangeMoviesApp.Domain.dll
 C:\TestMoviesApp_GitClone\OrangeMoviesWebApp\OrangeMoviesApp.Domain\bin\Debug\netcoreapp3.1\OrangeMoviesApp.Domain.pdb
-C:\TestMoviesApp_GitClone\OrangeMoviesWebApp\OrangeMoviesApp.Domain\obj\Debug\netcoreapp3.1\OrangeMoviesApp.Domain.csproj.AssemblyReference.cache
 C:\TestMoviesApp_GitClone\OrangeMoviesWebApp\OrangeMoviesApp.Domain\obj\Debug\netcoreapp3.1\OrangeMoviesApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\TestMoviesApp_GitClone\OrangeMoviesWebApp\OrangeMoviesApp.Domain\obj\Debug\netcoreapp3.1\OrangeMoviesApp.Domain.AssemblyInfoInputs.cache
 C:\TestMoviesApp_GitClone\OrangeMoviesWebApp\OrangeMoviesApp.Domain\obj\Debug\netcoreapp3.1\OrangeMoviesApp.Domain.AssemblyInfo.cs
