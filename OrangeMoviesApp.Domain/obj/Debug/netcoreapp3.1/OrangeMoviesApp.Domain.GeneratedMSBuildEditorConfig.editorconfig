@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = OrangeMoviesApp.Domain
+build_property.ProjectDir = C:\TestMoviesApp_GitClone\OrangeMoviesWebApp\OrangeMoviesApp.Domain\
